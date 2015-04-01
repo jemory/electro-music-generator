@@ -1,0 +1,258 @@
+<html>
+  <head>
+    <meta http-equix="content-type" content="text/html; charset=UTF-8">
+    <title>Electronic Music Subgenre Generator!</title>
+    <script type="text/javascript" src="//code.jquery.com/jquery-2.1.0.js"></script>
+  </head>
+  <body>
+    <style>
+      @import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
+
+html {
+    width:100%;
+    height:100%;
+    max-width:100%;
+}
+
+body {
+    background: linear-gradient(264deg, #006e7a, #454545, #455178, #494949, #593c69, #4d4d4d, #7b5622, #4b4b4b);
+    background-size: 1600% 1600%;
+    width:100%;
+    height:100%;
+    font-family: 'Lato';
+    color:#fff;
+
+    -webkit-animation: AnimationName 30s ease infinite;
+    -moz-animation: AnimationName 30s ease infinite;
+    animation: AnimationName 30s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes AnimationName { 
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+button{
+    cursor: pointer;
+font-family: "Lato","Helvetica",Helvetica,Arial,sans-serif;
+font-weight: 700;
+line-height: normal;
+margin: 0 0 1.25rem;
+position: relative;
+text-decoration: none;
+text-align: center;
+-webkit-appearance: none;
+-webkit-border-radius: 0;
+display: inline-block;
+padding-top: 1rem;
+padding-right: 2rem;
+padding-bottom: 1.0625rem;
+padding-left: 2rem;
+font-size: 1rem;
+background-color: #FDE3A7;
+border-color: #003c70;
+color: #000;
+transition: background-color 300ms ease-out;
+    border:none;
+}
+
+button:hover {
+    background-color: #F4B350;
+}
+
+.wrapper {
+    position: relative;
+    width:100%;
+    height:100%;
+}
+
+.wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+h1 {
+    font-size: 3em;
+    font-weight: 300;
+}
+}
+</style>
+
+<div class="wrapper">
+            <div class="container">
+                <h3>Electronic Music Subgenre Generator</h3>
+            
+                <button id="generate">Go!</button>
+            
+                <h1 id="new-genre"></h1>
+            </div>
+        </div>
+        
+<script>
+var adjs = new Array(
+    'liquid',
+    'chill',
+    'glitch',
+    'future',
+    'electro',
+    'jungle',
+    'elemental',
+    'club',
+    'arena',
+    'heavy',
+    'quantum',
+    '8-bit',
+    'ethics in games journalism',
+    'drum',
+    'world',
+    'bliss',
+    'jazzy',
+    'progressive',
+    'conservative',
+    'minimal',
+    'unplugged',
+    'bubblegum',
+    'rhythmic',
+    'crystal-energy',
+    'latin',
+    'right-wing',
+    'alternative',
+    'anarcho-libertarian',
+    'procedural',
+    'anti-vax',
+    'melodic',
+    'robotic',
+    'deconstructed',
+    'college',
+    'hipster',
+    'synth',
+    'downtempo',
+    'free-range',
+    'airy',
+    'indie',
+    'expermental',
+    'fancy',
+    'corporate',
+    'acid',
+    'basic',
+    'road',
+    'ambient',
+    'all-natural',
+    'Icelandic',
+    'folk',
+    'deep',
+    'serial',
+    'grime',
+    'throwback',
+    'shallow',
+    'tribal',
+    'public radio');
+
+var prefixes = new Array(
+    'bro',
+    'chill',
+    'smooth',
+    'dub',
+    'pod',
+    'sub',
+    'jam',
+    'moog',
+    'k-',
+    'afro',
+    'complex',
+    'break',
+    'chip',
+    'trip',
+    'euro',
+    'norm');
+
+var suffixes = new Array(
+    'swing',
+    'pop',
+    'jazz',
+    'grime')
+
+var genres = new Array(
+    'house',
+    'trance',
+    '-step',
+    'trap',
+    'dance',
+    'beats',
+    'bass',
+    'funk',
+    '-hop',
+    'techno',
+    'reggaeton',
+    '-wave',
+    '-pop',
+    '-beat',
+    '-rock',
+    '-core');
+
+var adjsNum = adjs.length,
+    prefixesNum = prefixes.length,
+    genresNum = genres.length;
+
+// Gets an int between 0 and max
+function rand(max) {
+    return Math.floor(Math.random() * max);
+}
+
+// Generates a new random EDM genre
+function generate() {
+    var numOfWords = 2,
+        genreSeed = rand(genresNum),
+        prefixSeed = rand(prefixesNum),
+        descriptors = "",
+        newGenre = "";
+    
+    for ( i = 0; i < numOfWords; i++) {
+        var seed = rand(adjsNum),
+            sel = adjs[seed];
+        
+        if ( sel + " " === descriptors ) {
+            sel = adjs[rand(adjsNum)];
+        }
+        
+        descriptors += sel + " ";
+    }
+    
+    newGenre = genres[genreSeed];
+    
+    if ( newGenre.charAt(0) === "-" ) {
+        var newPrefix = prefixes[prefixSeed],
+            newSuffix = newGenre.substring(1, newGenre.length);
+        
+        if ( newPrefix.charAt(newPrefix.length-1) === newSuffix.charAt(0) ) {
+             newGenre = newPrefix + "-" + newSuffix;
+        } else {
+             newGenre = newPrefix + newSuffix;
+        }
+        
+    }
+    
+    descriptors += newGenre;
+        
+    
+    document.getElementById("new-genre").innerHTML = descriptors;
+}
+
+$("#generate").click(function() {generate();});
+</script>
+  </body>
+</html>
