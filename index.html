@@ -4,128 +4,136 @@
     <title>Electronic Music Subgenre Generator!</title>
     <script type="text/javascript" src="//code.jquery.com/jquery-2.1.0.js"></script>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    
+      ga('create', 'UA-39837629-2', 'auto');
+      ga('send', 'pageview');
+    
+    </script>
   </head>
   <body>
     <style>
       @import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
 
-html, body {
-    width:100%;
-    height:100%;
-    max-width:100%;
-        font-family: 'Lato';
-    color:#fff;
-    padding: 0;
-    margin: 0;
-}
-
-.background {
-    background: linear-gradient(264deg, #006e7a, #454545, #455178, #494949, #593c69, #4d4d4d, #7b5622, #4b4b4b);
-    background-size: 1600% 1600%;
-    width:100%;
-    height:100%;
-
-
-    -webkit-animation: AnimationName 160s ease infinite;
-    -moz-animation: AnimationName 160s ease infinite;
-    animation: AnimationName 160s ease infinite;
-}
-
-@-webkit-keyframes AnimationName {
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
-}
-@-moz-keyframes AnimationName {
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
-}
-@keyframes AnimationName { 
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
-}
-
-button{
-    cursor: pointer;
-font-family: "Lato","Helvetica",Helvetica,Arial,sans-serif;
-font-weight: 700;
-line-height: normal;
-margin: 0 0 1.25rem;
-position: relative;
-text-decoration: none;
-text-align: center;
--webkit-appearance: none;
--webkit-border-radius: 0;
-display: inline-block;
-padding-top: 1rem;
-padding-right: 2rem;
-padding-bottom: 1.0625rem;
-padding-left: 2rem;
-font-size: 1rem;
-background-color: #FDE3A7;
-border-color: #003c70;
-color: #000;
-transition: background-color 300ms ease-out;
-    border:none;
-}
-
-button:hover {
-    background-color: #F4B350;
-}
-
-.wrapper {
-    position: relative;
-    width:100%;
-    height:100%;
-    margin-top: 1em;
-}
-
-.wrapper {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -webkit-transform: translate(-50%, -50%);
-  text-align: center;
-}
-
-h1 {
-    font-size: 3em;
-    font-weight: 400;
-}
-
-.credits {
-  position: absolute;
-  bottom: 0.5em;
-  left: 50%;
-  text-align: center;
-  transform: translateX(-50%);
-  -webkit-transform: translateX(-50%);
-}
-
-a {
-  color: #ffffff;
-  text-decoration: none;
-  border-bottom: 1px dotted rgba(255,255,255,0.6);
-}
+      html, body {
+          width:100%;
+          height:100%;
+          max-width:100%;
+              font-family: 'Lato';
+          color:#fff;
+          padding: 0;
+          margin: 0;
+      }
+      
+      .background {
+          background: linear-gradient(264deg, #006e7a, #454545, #455178, #494949, #593c69, #4d4d4d, #7b5622, #4b4b4b);
+          background-size: 1600% 1600%;
+          width:100%;
+          height:100%;
+      
+      
+          -webkit-animation: AnimationName 160s ease infinite;
+          -moz-animation: AnimationName 160s ease infinite;
+          animation: AnimationName 160s ease infinite;
+      }
+      
+      @-webkit-keyframes AnimationName {
+          0%{background-position:0% 50%}
+          50%{background-position:100% 50%}
+          100%{background-position:0% 50%}
+      }
+      @-moz-keyframes AnimationName {
+          0%{background-position:0% 50%}
+          50%{background-position:100% 50%}
+          100%{background-position:0% 50%}
+      }
+      @keyframes AnimationName { 
+          0%{background-position:0% 50%}
+          50%{background-position:100% 50%}
+          100%{background-position:0% 50%}
+      }
+      
+      button{
+          cursor: pointer;
+      font-family: "Lato","Helvetica",Helvetica,Arial,sans-serif;
+      font-weight: 700;
+      line-height: normal;
+      margin: 0 0 1.25rem;
+      position: relative;
+      text-decoration: none;
+      text-align: center;
+      -webkit-appearance: none;
+      -webkit-border-radius: 0;
+      display: inline-block;
+      padding-top: 1rem;
+      padding-right: 2rem;
+      padding-bottom: 1.0625rem;
+      padding-left: 2rem;
+      font-size: 1rem;
+      background-color: #FDE3A7;
+      border-color: #003c70;
+      color: #000;
+      transition: background-color 300ms ease-out;
+          border:none;
+      }
+      
+      button:hover {
+          background-color: #F4B350;
+      }
+      
+      .wrapper {
+          position: relative;
+          width:100%;
+          height:100%;
+          margin-top: 1em;
+      }
+      
+      .wrapper {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+        text-align: center;
+      }
+      
+      h1 {
+          font-size: 3em;
+          font-weight: 400;
+      }
+      
+      .credits {
+        position: absolute;
+        bottom: 0.5em;
+        left: 50%;
+        text-align: center;
+        transform: translateX(-50%);
+        -webkit-transform: translateX(-50%);
+      }
+      
+      a {
+        color: #ffffff;
+        text-decoration: none;
+        border-bottom: 1px dotted rgba(255,255,255,0.6);
+      }
 
 </style>
 
-<div class="background"></div>
+  <div class="background"></div>
 
-        <div class="wrapper">
-            <div class="container">
-                <h3>Electronic Music Subgenre Generator</h3>
-            
-                <button id="generate">Go!</button>
-            
-                <h1 id="new-genre"></h1>
-            </div>
-        </div>
+  <div class="wrapper">
+      <div class="container">
+          <h3>Electronic Music Subgenre Generator</h3>
+          <button id="generate">Go!</button>
+          <h1 id="new-genre"></h1>
+      </div>
+  </div>
         
-        <p class="credits"><a href="http://www.jemory.com" target="_blank">J. Emory Parker</a> | <a href="https://twitter.com/jaspar" target="_blank"><i class="fa fa-twitter"></i> @jaspar</a></p>
+  <p class="credits"><a href="http://www.jemory.com" target="_blank">J. Emory Parker</a> | <a href="https://twitter.com/jaspar" target="_blank"><i class="fa fa-twitter"></i> @jaspar</a></p>
         
 <script>
 var adjs = new Array(
@@ -279,5 +287,6 @@ function generate() {
 
 $("#generate").click(function() {generate();});
 </script>
+
   </body>
 </html>
